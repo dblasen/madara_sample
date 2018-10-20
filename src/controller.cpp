@@ -459,6 +459,24 @@ void handle_arguments (int argc, char ** argv)
   }
 }
 
+/*
+ * An on-receive filter to filter after a certain number of iterations.
+ * (Not sure if this is working how I want. What gives?)
+ */
+madara::knowledge::KnowledgeRecord filter_iterations(
+    madara::knowledge::FunctionArguments& args, madara::knowledge::Variables& vars)
+{
+  int cutoff = 10;
+  int current_iter = vars.get("iterations").to_integer();
+  madara::knowledge::KnowledgeRecord res;
+  if(current_iter <= cutoff)
+  {
+    res = args[0];
+  }
+  return(res);
+}
+
+
 // perform main logic of program
 int main (int argc, char ** argv)
 {
@@ -502,15 +520,19 @@ int main (int argc, char ** argv)
   madara::knowledge::KnowledgeBase knowledge;
   
   // begin on receive filters
+  settings.add_receive_filter(madara::knowledge::KnowledgeRecord::ALL_TYPES, filter_iterations);
   // end on receive filters
   
   // begin on send filters
   // end on send filters
   
   // if you only want to use custom transports, delete following
-  knowledge.attach_transport (host, settings);
+  //knowledge.attach_transport (host, settings);
   
   // begin transport creation 
+  // since we're using ZMQ for this exercise, we set it here.
+  settings.type = madara::transport::ZMQ;
+  knowledge.attach_transport (host, settings);
   // end transport creation
   
   // set this once to allow for debugging controller creation

@@ -5,6 +5,7 @@ var controller_8cpp =
     [ "algorithm", "d1/d47/controller_8cpp.html#a47d7c31b22b078e7bafd6aa6716af65f", null ],
     [ "default_broadcast", "d1/d47/controller_8cpp.html#af6158236a360878159a8e799ee00cf55", null ],
     [ "default_multicast", "d1/d47/controller_8cpp.html#aef952081e87739384ba5433cfe4297ae", null ],
+    [ "filter_iterations", "d1/d47/controller_8cpp.html#a942835bd471f5e430a06df0f83b236fd", null ],
     [ "gams_debug_level", "d1/d47/controller_8cpp.html#a4cc3f709921e3e02c780e024add832d3", null ],
     [ "handle_arguments", "d1/d47/controller_8cpp.html#a2cfd518572976845680798882117c286", null ],
     [ "host", "d1/d47/controller_8cpp.html#a982f4a462e23a5b6d37f88f16de65200", null ],

@@ -41,6 +41,8 @@ virtual void \hyperlink{classthreads_1_1producer_aa060b439ac1979c44c8076b59cbe15
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
+\hyperlink{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}{containers\+::\+Integer} \hyperlink{classthreads_1_1producer_ab1c9e99abf599d46572e47eca1299ca2}{iterations}
+\item 
 \hyperlink{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}{containers\+::\+Integer} \hyperlink{classthreads_1_1producer_a5ca9ba785a3f49123aea07f960e5497d}{random\+\_\+number}
 \end{DoxyCompactItemize}
 \subsection*{Private Attributes}
@@ -128,7 +130,7 @@ Executes the actual thread logic.
 
 Best practice is to simply do one loop iteration. If you want a long running thread that executes something frequently, see the madara\+::threads\+::\+Threader\+::run\+Hz method in your controller. the M\+A\+D\+A\+RA logger is thread-\/safe, fast, and allows for specifying various options like output files and multiple output targets ( e.\+g., std\+::cerr, a system log, and a thread\+\_\+output.\+txt file). You can create your own custom log levels or loggers as well.
 
-Definition at line 41 of file producer.\+cpp.
+Definition at line 44 of file producer.\+cpp.
 
 
 
@@ -143,6 +145,13 @@ data plane if we want to access the knowledge base
 
 
 Definition at line 44 of file producer.\+h.
+
+\index{threads\+::producer@{threads\+::producer}!iterations@{iterations}}
+\index{iterations@{iterations}!threads\+::producer@{threads\+::producer}}
+\subsubsection[{\texorpdfstring{iterations}{iterations}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf containers\+::\+Integer} threads\+::producer\+::iterations\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{classthreads_1_1producer_ab1c9e99abf599d46572e47eca1299ca2}{}\label{classthreads_1_1producer_ab1c9e99abf599d46572e47eca1299ca2}
+
+
+Definition at line 51 of file producer.\+h.
 
 \index{threads\+::producer@{threads\+::producer}!random\+\_\+number@{random\+\_\+number}}
 \index{random\+\_\+number@{random\+\_\+number}!threads\+::producer@{threads\+::producer}}

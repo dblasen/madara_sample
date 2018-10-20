@@ -47,6 +47,9 @@ namespace threads
     // a place to stash our produced random integer
     containers::Integer random_number;
 
+    // numebr of iterations we've made
+    containers::Integer iterations;
+
   };
 } // end namespace threads
 

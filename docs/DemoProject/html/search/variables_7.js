@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['random_5fnumber',['random_number',['../d0/db8/classthreads_1_1producer.html#a5ca9ba785a3f49123aea07f960e5497d',1,'threads::producer']]]
+  ['plat_5fset',['plat_set',['../d1/d47/controller_8cpp.html#a7f9805e384e72197c583a2d18af8d7c7',1,'controller.cpp']]]
 ];

@@ -27,8 +27,11 @@ threads::producer::init (knowledge::KnowledgeBase & knowledge)
   // point our data plane to the knowledge base initializing the thread
   data_ = knowledge;
 
-  // name our Integer in the KnowledgeBase
+  // name our random_number Integer in the KnowledgeBase
   random_number.set_name("random_number", knowledge);
+
+  // name our iterations Integer in the KnowledgeBase
+  iterations.set_name("iterations", knowledge);
 }
 
 /**
@@ -51,6 +54,9 @@ threads::producer::run (void)
     "threads::producer::run:" 
     " executing\n");
 
+  // increment our iterations
+  ++iterations;
+
   // modify the random_number stored in the KnowledgeBase
   int64_t rn = rand() % 100;
   random_number = rn;
@@ -60,4 +66,5 @@ threads::producer::run (void)
   message << "Producer made " << rn << std::endl;
   data_.print(message.str(), 0);
 
+  data_.print();
 }

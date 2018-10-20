@@ -42,6 +42,9 @@ namespace threads
   private:
     /// data plane if we want to access the knowledge base
     madara::knowledge::KnowledgeBase data_;
+
+    /// iterations between writing to file
+    int write_out_interval = 5;
   };
 } // end namespace threads
 

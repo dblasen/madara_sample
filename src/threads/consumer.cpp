@@ -62,4 +62,10 @@ threads::consumer::run (void)
     message << "Consumer found " << random_number_in << " and changed it to " << random_number_modified << std::endl;
     data_.print(message.str(), 0);
   }
+
+  // write to file if we need to
+  if(data_.get("iterations").to_integer() % write_out_interval == 0 )
+  {
+    data_.save_as_json("output.json");
+  }
 }
