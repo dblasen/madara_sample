@@ -1,0 +1,265 @@
+\hypertarget{controller_8cpp}{}\section{src/controller.cpp File Reference}
+\label{controller_8cpp}\index{src/controller.\+cpp@{src/controller.\+cpp}}
+{\ttfamily \#include \char`\"{}madara/knowledge/\+Knowledge\+Base.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}madara/threads/\+Threader.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gams/controllers/\+Base\+Controller.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}gams/loggers/\+Global\+Logger.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}threads/consumer.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}threads/producer.\+h\char`\"{}}\\*
+Include dependency graph for controller.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d7c/controller_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef Record\+::\+Integer \hyperlink{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}{Integer}
+\item 
+typedef madara\+::knowledge\+::\+Knowledge\+Record \hyperlink{controller_8cpp_abaaae61bd3a8fa0865e1a39d781f1c6a}{Record}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{controller_8cpp_a47d7c31b22b078e7bafd6aa6716af65f}{algorithm} (\char`\"{}debug\char`\"{})
+\item 
+const std\+::string \hyperlink{controller_8cpp_af6158236a360878159a8e799ee00cf55}{default\+\_\+broadcast} (\char`\"{}192.\+168.\+1.\+255\+:15000\char`\"{})
+\item 
+const std\+::string \hyperlink{controller_8cpp_aef952081e87739384ba5433cfe4297ae}{default\+\_\+multicast} (\char`\"{}239.\+255.\+0.\+1\+:4150\char`\"{})
+\item 
+int \hyperlink{controller_8cpp_a4cc3f709921e3e02c780e024add832d3}{gams\+\_\+debug\+\_\+level} (-\/1)
+\item 
+void \hyperlink{controller_8cpp_a2cfd518572976845680798882117c286}{handle\+\_\+arguments} (int argc, char $\ast$$\ast$argv)
+\item 
+std\+::string \hyperlink{controller_8cpp_a982f4a462e23a5b6d37f88f16de65200}{host} (\char`\"{}\char`\"{})
+\item 
+const std\+::string \hyperlink{controller_8cpp_ad130ea69067dbc70ce19d211c78790fb}{K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY} (\char`\"{}.platform\char`\"{})
+\item 
+int \hyperlink{controller_8cpp_a8db2049b790bead0a74fa18c8d9c3248}{madara\+\_\+debug\+\_\+level} (-\/1)
+\item 
+int \hyperlink{controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\item 
+\hyperlink{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}{Integer} \hyperlink{controller_8cpp_aee452f6ed6c9d22ef6d6f158593cebab}{num\+\_\+agents} (-\/1)
+\item 
+std\+::string \hyperlink{controller_8cpp_a6615fcccb5acbeab9bcda3de434f9a06}{platform} (\char`\"{}debug\char`\"{})
+\item 
+void \hyperlink{controller_8cpp_a5724b5d5bd1fb93f9ae44b8d46b64328}{print\+\_\+usage} (char $\ast$prog\+\_\+name)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{controller_8cpp_a7a8184cd712a2cb884729b30455085c2}{accents}
+\item 
+gams\+::controllers\+::\+Controller\+Settings \hyperlink{controller_8cpp_a870798875407fd034b8a1821a2742010}{controller\+\_\+settings}
+\item 
+std\+::string \hyperlink{controller_8cpp_abf5d4571e49256d0c9d862dfe4936e55}{file\+\_\+path}
+\item 
+std\+::string \hyperlink{controller_8cpp_a72c33b609a3d0dd486df35320be2653b}{load\+\_\+transport\+\_\+prefix}
+\item 
+std\+::string \hyperlink{controller_8cpp_aa29d439d2009d11570344604918bd177}{madara\+\_\+commands} = \char`\"{}\char`\"{}
+\item 
+bool \hyperlink{controller_8cpp_a7f9805e384e72197c583a2d18af8d7c7}{plat\+\_\+set} = false
+\item 
+std\+::string \hyperlink{controller_8cpp_ae81934598902069e7e0f607eae169c14}{save\+\_\+transport}
+\item 
+std\+::string \hyperlink{controller_8cpp_a70f924546b0db8262dae5cc9d9dbed0b}{save\+\_\+transport\+\_\+prefix}
+\item 
+std\+::string \hyperlink{controller_8cpp_a0d1cbde6bde4c0379bbd29aa8f421737}{save\+\_\+transport\+\_\+text}
+\item 
+madara\+::transport\+::\+Qo\+S\+Transport\+Settings \hyperlink{controller_8cpp_aeec674db9554192e56960857e748f0ab}{settings}
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{controller.\+cpp@{controller.\+cpp}!Integer@{Integer}}
+\index{Integer@{Integer}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{Integer}{Integer}}]{\setlength{\rightskip}{0pt plus 5cm}typedef Record\+::\+Integer {\bf Integer}}\hypertarget{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}{}\label{controller_8cpp_a0584e2a15ee1231298f4501eca6bd1a0}
+
+
+Definition at line 38 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!Record@{Record}}
+\index{Record@{Record}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{Record}{Record}}]{\setlength{\rightskip}{0pt plus 5cm}typedef madara\+::knowledge\+::\+Knowledge\+Record {\bf Record}}\hypertarget{controller_8cpp_abaaae61bd3a8fa0865e1a39d781f1c6a}{}\label{controller_8cpp_abaaae61bd3a8fa0865e1a39d781f1c6a}
+
+
+Definition at line 37 of file controller.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{controller.\+cpp@{controller.\+cpp}!algorithm@{algorithm}}
+\index{algorithm@{algorithm}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{algorithm(""debug"")}{algorithm("debug")}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string algorithm (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}debug\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a47d7c31b22b078e7bafd6aa6716af65f}{}\label{controller_8cpp_a47d7c31b22b078e7bafd6aa6716af65f}
+\index{controller.\+cpp@{controller.\+cpp}!default\+\_\+broadcast@{default\+\_\+broadcast}}
+\index{default\+\_\+broadcast@{default\+\_\+broadcast}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+broadcast(""192.\+168.\+1.\+255\+:15000"")}{default_broadcast("192.168.1.255:15000")}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string default\+\_\+broadcast (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}192.\+168.\+1.\+255\+:15000\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_af6158236a360878159a8e799ee00cf55}{}\label{controller_8cpp_af6158236a360878159a8e799ee00cf55}
+\index{controller.\+cpp@{controller.\+cpp}!default\+\_\+multicast@{default\+\_\+multicast}}
+\index{default\+\_\+multicast@{default\+\_\+multicast}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{default\+\_\+multicast(""239.\+255.\+0.\+1\+:4150"")}{default_multicast("239.255.0.1:4150")}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string default\+\_\+multicast (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}239.\+255.\+0.\+1\+:4150\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_aef952081e87739384ba5433cfe4297ae}{}\label{controller_8cpp_aef952081e87739384ba5433cfe4297ae}
+\index{controller.\+cpp@{controller.\+cpp}!gams\+\_\+debug\+\_\+level@{gams\+\_\+debug\+\_\+level}}
+\index{gams\+\_\+debug\+\_\+level@{gams\+\_\+debug\+\_\+level}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{gams\+\_\+debug\+\_\+level(-\/1)}{gams_debug_level(-1)}}]{\setlength{\rightskip}{0pt plus 5cm}int gams\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{-\/}]{1}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a4cc3f709921e3e02c780e024add832d3}{}\label{controller_8cpp_a4cc3f709921e3e02c780e024add832d3}
+\index{controller.\+cpp@{controller.\+cpp}!handle\+\_\+arguments@{handle\+\_\+arguments}}
+\index{handle\+\_\+arguments@{handle\+\_\+arguments}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{handle\+\_\+arguments(int argc, char $\ast$$\ast$argv)}{handle_arguments(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}void handle\+\_\+arguments (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a2cfd518572976845680798882117c286}{}\label{controller_8cpp_a2cfd518572976845680798882117c286}
+
+
+Definition at line 113 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!host@{host}}
+\index{host@{host}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{host("""")}{host("")}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string host (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a982f4a462e23a5b6d37f88f16de65200}{}\label{controller_8cpp_a982f4a462e23a5b6d37f88f16de65200}
+\index{controller.\+cpp@{controller.\+cpp}!K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY@{K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY}}
+\index{K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY@{K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+E\+Y("".\+platform"")}{KNOWLEDGE_BASE_PLATFORM_KEY(".platform")}}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::string K\+N\+O\+W\+L\+E\+D\+G\+E\+\_\+\+B\+A\+S\+E\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+K\+EY (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}.platform\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_ad130ea69067dbc70ce19d211c78790fb}{}\label{controller_8cpp_ad130ea69067dbc70ce19d211c78790fb}
+\index{controller.\+cpp@{controller.\+cpp}!madara\+\_\+debug\+\_\+level@{madara\+\_\+debug\+\_\+level}}
+\index{madara\+\_\+debug\+\_\+level@{madara\+\_\+debug\+\_\+level}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{madara\+\_\+debug\+\_\+level(-\/1)}{madara_debug_level(-1)}}]{\setlength{\rightskip}{0pt plus 5cm}int madara\+\_\+debug\+\_\+level (
+\begin{DoxyParamCaption}
+\item[{-\/}]{1}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a8db2049b790bead0a74fa18c8d9c3248}{}\label{controller_8cpp_a8db2049b790bead0a74fa18c8d9c3248}
+\index{controller.\+cpp@{controller.\+cpp}!main@{main}}
+\index{main@{main}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{controller_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+W\+A\+R\+N\+I\+NG\+: the following section will be regenerated whenever new threads are added via this tool. So, you can adjust hertz rates and change how the thread is initialized, but the entire section will be regenerated with all threads in the threads directory, whenever you use the new thread option with the gpc.\+pl script.
+
+E\+ND W\+A\+R\+N\+I\+NG
+
+Definition at line 463 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!num\+\_\+agents@{num\+\_\+agents}}
+\index{num\+\_\+agents@{num\+\_\+agents}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{num\+\_\+agents(-\/1)}{num_agents(-1)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Integer} num\+\_\+agents (
+\begin{DoxyParamCaption}
+\item[{-\/}]{1}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_aee452f6ed6c9d22ef6d6f158593cebab}{}\label{controller_8cpp_aee452f6ed6c9d22ef6d6f158593cebab}
+\index{controller.\+cpp@{controller.\+cpp}!platform@{platform}}
+\index{platform@{platform}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{platform(""debug"")}{platform("debug")}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string platform (
+\begin{DoxyParamCaption}
+\item[{\char`\"{}debug\char`\"{}}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a6615fcccb5acbeab9bcda3de434f9a06}{}\label{controller_8cpp_a6615fcccb5acbeab9bcda3de434f9a06}
+\index{controller.\+cpp@{controller.\+cpp}!print\+\_\+usage@{print\+\_\+usage}}
+\index{print\+\_\+usage@{print\+\_\+usage}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{print\+\_\+usage(char $\ast$prog\+\_\+name)}{print_usage(char *prog_name)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+usage (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{prog\+\_\+name}
+\end{DoxyParamCaption}
+)}\hypertarget{controller_8cpp_a5724b5d5bd1fb93f9ae44b8d46b64328}{}\label{controller_8cpp_a5724b5d5bd1fb93f9ae44b8d46b64328}
+
+
+Definition at line 68 of file controller.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{controller.\+cpp@{controller.\+cpp}!accents@{accents}}
+\index{accents@{accents}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{accents}{accents}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$std\+::string$>$ accents}\hypertarget{controller_8cpp_a7a8184cd712a2cb884729b30455085c2}{}\label{controller_8cpp_a7a8184cd712a2cb884729b30455085c2}
+
+
+Definition at line 44 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!controller\+\_\+settings@{controller\+\_\+settings}}
+\index{controller\+\_\+settings@{controller\+\_\+settings}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{controller\+\_\+settings}{controller_settings}}]{\setlength{\rightskip}{0pt plus 5cm}gams\+::controllers\+::\+Controller\+Settings controller\+\_\+settings}\hypertarget{controller_8cpp_a870798875407fd034b8a1821a2742010}{}\label{controller_8cpp_a870798875407fd034b8a1821a2742010}
+
+
+Definition at line 66 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!file\+\_\+path@{file\+\_\+path}}
+\index{file\+\_\+path@{file\+\_\+path}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{file\+\_\+path}{file_path}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string file\+\_\+path}\hypertarget{controller_8cpp_abf5d4571e49256d0c9d862dfe4936e55}{}\label{controller_8cpp_abf5d4571e49256d0c9d862dfe4936e55}
+
+
+Definition at line 57 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!load\+\_\+transport\+\_\+prefix@{load\+\_\+transport\+\_\+prefix}}
+\index{load\+\_\+transport\+\_\+prefix@{load\+\_\+transport\+\_\+prefix}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{load\+\_\+transport\+\_\+prefix}{load_transport_prefix}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string load\+\_\+transport\+\_\+prefix}\hypertarget{controller_8cpp_a72c33b609a3d0dd486df35320be2653b}{}\label{controller_8cpp_a72c33b609a3d0dd486df35320be2653b}
+
+
+Definition at line 63 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!madara\+\_\+commands@{madara\+\_\+commands}}
+\index{madara\+\_\+commands@{madara\+\_\+commands}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{madara\+\_\+commands}{madara_commands}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string madara\+\_\+commands = \char`\"{}\char`\"{}}\hypertarget{controller_8cpp_aa29d439d2009d11570344604918bd177}{}\label{controller_8cpp_aa29d439d2009d11570344604918bd177}
+
+
+Definition at line 47 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!plat\+\_\+set@{plat\+\_\+set}}
+\index{plat\+\_\+set@{plat\+\_\+set}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{plat\+\_\+set}{plat_set}}]{\setlength{\rightskip}{0pt plus 5cm}bool plat\+\_\+set = false}\hypertarget{controller_8cpp_a7f9805e384e72197c583a2d18af8d7c7}{}\label{controller_8cpp_a7f9805e384e72197c583a2d18af8d7c7}
+
+
+Definition at line 41 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!save\+\_\+transport@{save\+\_\+transport}}
+\index{save\+\_\+transport@{save\+\_\+transport}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{save\+\_\+transport}{save_transport}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string save\+\_\+transport}\hypertarget{controller_8cpp_ae81934598902069e7e0f607eae169c14}{}\label{controller_8cpp_ae81934598902069e7e0f607eae169c14}
+
+
+Definition at line 60 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!save\+\_\+transport\+\_\+prefix@{save\+\_\+transport\+\_\+prefix}}
+\index{save\+\_\+transport\+\_\+prefix@{save\+\_\+transport\+\_\+prefix}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{save\+\_\+transport\+\_\+prefix}{save_transport_prefix}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string save\+\_\+transport\+\_\+prefix}\hypertarget{controller_8cpp_a70f924546b0db8262dae5cc9d9dbed0b}{}\label{controller_8cpp_a70f924546b0db8262dae5cc9d9dbed0b}
+
+
+Definition at line 61 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!save\+\_\+transport\+\_\+text@{save\+\_\+transport\+\_\+text}}
+\index{save\+\_\+transport\+\_\+text@{save\+\_\+transport\+\_\+text}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{save\+\_\+transport\+\_\+text}{save_transport_text}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string save\+\_\+transport\+\_\+text}\hypertarget{controller_8cpp_a0d1cbde6bde4c0379bbd29aa8f421737}{}\label{controller_8cpp_a0d1cbde6bde4c0379bbd29aa8f421737}
+
+
+Definition at line 62 of file controller.\+cpp.
+
+\index{controller.\+cpp@{controller.\+cpp}!settings@{settings}}
+\index{settings@{settings}!controller.\+cpp@{controller.\+cpp}}
+\subsubsection[{\texorpdfstring{settings}{settings}}]{\setlength{\rightskip}{0pt plus 5cm}madara\+::transport\+::\+Qo\+S\+Transport\+Settings settings}\hypertarget{controller_8cpp_aeec674db9554192e56960857e748f0ab}{}\label{controller_8cpp_aeec674db9554192e56960857e748f0ab}
+
+
+Definition at line 33 of file controller.\+cpp.
+
