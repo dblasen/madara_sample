@@ -66,5 +66,6 @@ threads::producer::run (void)
   message << "Producer made " << rn << std::endl;
   data_.print(message.str(), 0);
 
-  data_.print();
+  // print the whole kb for debug purposes
+  //data_.print();
 }
